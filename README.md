@@ -1,1 +1,1 @@
-# XSS-WebApp
+# Web
