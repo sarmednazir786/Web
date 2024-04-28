@@ -4,7 +4,7 @@ app = Flask(__name__)
 @app.route('/success/subscribed')
 
 def success():
-	return render_template('subscribed.html', sites=sanitized_value)
+	return render_template('subscribed.html', sites=value)
 #	return 'Hello %s' % sanitized_value
 	
 @app.route('/login', methods=['POST', 'GET'])
@@ -12,10 +12,11 @@ def success():
 def login():
 	if request.method == 'POST':
 		global value
-		global sanitized_value
+		word = "<script>"
 		
 		value = request.form['nm']
-		sanitized_value = value.replace('<script>', '').replace('</script>', '')
+		if word in value:
+			print("flag{XSS Exploited Successfully}")
 		return redirect(url_for('success'))
 	else:
 		user = request.args.get('nm')
