@@ -1,4 +1,4 @@
-﻿## Title: The Shrewd thief
+﻿## Title: The Shrewd Thief
 ## Details:
 * difficulty: Easy
 * category: Web 
